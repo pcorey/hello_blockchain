@@ -1,5 +1,7 @@
 /* This file is for your main application css. */
 
 code {
-    background-color: transparent !important;
+    display: block !important;
+    white-space: pre !important;
+    background: transparent !important;
 }
