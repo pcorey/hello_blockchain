@@ -1,1 +1,5 @@
 /* This file is for your main application css. */
+
+code {
+    background-color: transparent !important;
+}

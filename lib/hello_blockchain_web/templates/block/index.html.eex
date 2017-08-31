@@ -1,0 +1,42 @@
+<h2>Listing Blocks</h2>
+
+<div class="row">
+    <!-- <label class="col-sm-4">Balance:</label> -->
+    <!-- <p class="col-sm-8"><%= @blocks["balance"] %></p> -->
+
+    <label class="col-sm-4">Blocks:</label>
+    <p class="col-sm-8"><%= @blocks["blocks"] %></p>
+
+    <label class="col-sm-4">Connections:</label>
+    <p class="col-sm-8"><%= @blocks["connections"] %></p>
+
+    <label class="col-sm-4">Difficulty:</label>
+    <p class="col-sm-8"><%= @blocks["difficulty"] %></p>
+
+    <!-- <label class="col-sm-4">Key Pool Oldest:</label> -->
+    <!-- <p class="col-sm-8"><%= @blocks["keypoololdest"] %></p> -->
+
+    <!-- <label class="col-sm-4">Key Pool Size:</label> -->
+    <!-- <p class="col-sm-8"><%= @blocks["keypoolsize"] %></p> -->
+
+    <!-- <label class="col-sm-4">Pay TX Fee:</label> -->
+    <!-- <p class="col-sm-8"><%= @blocks["paytxfee"] %></p> -->
+
+    <label class="col-sm-4">Protocol Version:</label>
+    <p class="col-sm-8"><%= @blocks["protocolversion"] %></p>
+
+    <!-- <label class="col-sm-4">Relay Fee:</label> -->
+    <!-- <p class="col-sm-8"><%= @blocks["relayfee"] %></p> -->
+
+    <label class="col-sm-4">Testnet:</label>
+    <p class="col-sm-8"><%= @blocks["testnet"] %></p>
+
+    <!-- <label class="col-sm-4">Time Offset:</label> -->
+    <!-- <p class="col-sm-8"><%= @blocks["timeoffset"] %></p> -->
+
+    <label class="col-sm-4">Version:</label>
+    <p class="col-sm-8"><%= @blocks["version"] %></p>
+
+    <button class="col-sm-12 btn btn-primary" >See first block</button>
+
+</div>

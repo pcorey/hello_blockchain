@@ -1,0 +1,1 @@
+<code style="display: block; white-space: pre;"><%= raw(Poison.encode!(@block, pretty: true)) %></code>
