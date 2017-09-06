@@ -1,1 +1,1 @@
-<code><%= Poison.encode!(@block, pretty: true) %></code>
+<code style="color: #aaa;"><%= raw(mark_up_block(@block)) %></code>

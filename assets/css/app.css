@@ -1,6 +1,5 @@
-/* This file is for your main application css. */
-
 code {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
     display: block !important;
     white-space: pre !important;
     background: transparent !important;

@@ -13,18 +13,13 @@
 
   <body>
     <div class="container">
-        <!-- <header class="header"> -->
-        <!-- <nav role="navigation"> -->
-        <!-- <ul class="nav nav-pills pull-right"> -->
-        <!-- <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li> -->
-        <!-- </ul> -->
-        <!-- </nav> -->
-        <!-- <span class="logo"></span> -->
-        <!-- </header> -->
-
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
+      <p style="margin: 1em 0; text-align: right;">
+        <code style="display: inline-block !important;"><a href="/blocks">[blocks]</a></code>
+        <code style="display: inline-block !important;"><a href="/headers">[headers]</a></code>
+      </p>
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>

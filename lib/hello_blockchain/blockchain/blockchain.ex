@@ -1,35 +1,25 @@
 defmodule HelloBlockchain.Blockchain do
-  import Ecto.Query, warn: false
 
-  alias HelloBlockchain.Repo
-  alias HelloBlockchain.Blockchain.Block
-
-  defp bitcoind(command) do
-    url = "http://bitcoinrpc:dae10a91212ab0423401b0f079e043ed@localhost:8332"
-    body = %{jsonrpc: "1.0", params: []}
-    |> Map.merge(command)
-    |> Poison.encode!
-    headers = [{"Content-Type", "application/json"}]
-    with {:ok, response} <- HTTPoison.post(url, body, headers),
-         {:ok, body} <- Poison.decode(response.body),
-         %{"error" => nil, "result" => result} <- body do
+  def bitcoin_rpc(method, params \\ []) do
+    with url <- Application.get_env(:hello_blockchain, :bitcoin_url),
+         command <- %{jsonrpc: "1.0", method: method, params: params},
+         {:ok, body} <- Poison.encode(command),
+         {:ok, response} <- HTTPoison.post(url, body),
+         {:ok, metadata} <- Poison.decode(response.body),
+           %{"error" => nil, "result" => result} <- metadata do
       {:ok, result}
     else
-      %{"error" => error} -> {:error, error}
-      _ -> {:error, :jsonrpc_failure}
+      %{"error" => reason} -> {:error, reason}
+    error -> error
     end
   end
 
-  def getinfo do
-    bitcoind(%{method: "getinfo"})
-  end
+  def getinfo, do: bitcoin_rpc("getinfo")
 
-  def getblockhash(index) do
-    bitcoind(%{method: "getblockhash", params: [index]})
-  end
+  def getblockhash(height), do: bitcoin_rpc("getblockhash", [height])
 
-  def getblock(hash) do
-    bitcoind(%{method: "getblock", params: [hash]})
-  end
+  def getblock(hash), do: bitcoin_rpc("getblock", [hash])
+
+  def getblockheader(hash), do: bitcoin_rpc("getblockheader", [hash])
 
 end
