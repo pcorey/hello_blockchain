@@ -13,12 +13,9 @@
 
   <body>
     <div class="container">
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-
-      <p style="margin: 1em 0; text-align: right;">
-        <code style="display: inline-block !important;"><a href="/blocks">[blocks]</a></code>
-        <code style="display: inline-block !important;"><a href="/headers">[headers]</a></code>
+      <p style="display: flex; flex-direction: row; margin: 0 0 3em 0;">
+        <code style="flex: 1;"><b>Hello blockchain</b></code>
+        <code style="display: inline-block !important;"><a href="/blocks">[blocks]</a> <a href="/headers">[headers]</a></code>
       </p>
       <main role="main">
         <%= render @view_module, @view_template, assigns %>

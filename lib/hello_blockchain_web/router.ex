@@ -15,7 +15,9 @@ defmodule HelloBlockchainWeb.Router do
 
   scope "/", HelloBlockchainWeb do
     pipe_through :browser # Use the default browser stack
-    resources "/", BlockController, only: [:index, :show]
+    resources "/", PageController, only: [:index]
+    resources "/blocks", BlockController, only: [:index, :show]
+    resources "/headers", HeaderController, only: [:index, :show]
   end
 
   # Other scopes may use custom stacks.

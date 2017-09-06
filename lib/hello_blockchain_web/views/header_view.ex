@@ -1,4 +1,4 @@
-defmodule HelloBlockchainWeb.BlockView do
+defmodule HelloBlockchainWeb.HeaderView do
   use HelloBlockchainWeb, :view
 
   # alias HelloBlockchainWeb.Endpoint
@@ -6,7 +6,7 @@ defmodule HelloBlockchainWeb.BlockView do
   # alias Phoenix.HTML
   # alias Phoenix.HTML.Link
 
-  defp hash_link(hash), do: "<a href='/blocks/#{hash}'>#{hash}</a>"
+  defp hash_link(hash), do: "<a href='/headers/#{hash}'>#{hash}</a>"
 
   # defp hash_link(hash) do
   #   Link.link(hash, to: Router.Helpers.block_path(Endpoint, :show, hash || ""))
