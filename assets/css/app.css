@@ -10,7 +10,7 @@ html {
 html {
     min-height: 100%;
     height: 100%;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 body {
@@ -37,4 +37,5 @@ code {
 
 a {
     color: #37f;
+    font-weight: bold;
 }
