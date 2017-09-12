@@ -2,11 +2,9 @@ defmodule HelloBlockchainWeb.HeaderController do
   use HelloBlockchainWeb, :controller
 
   alias HelloBlockchain.Blockchain
-  alias HelloBlockchain.Blockchain.Block
 
   def index(conn, _params) do
-    with {:ok, info} <- Blockchain.getinfo() |> IO.inspect,
-         {:ok, hash} <- Blockchain.getblockhash(info["blocks"]) do
+    with {:ok, hash} <- Blockchain.getbestblockhash() do
       redirect(conn, to: header_path(conn, :show, hash))
     end
   end

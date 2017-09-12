@@ -14,7 +14,7 @@ defmodule HelloBlockchain.Blockchain do
     end
   end
 
-  def getinfo, do: bitcoin_rpc("getinfo")
+  def getbestblockhash, do: bitcoin_rpc("getbestblockhash")
 
   def getblockhash(height), do: bitcoin_rpc("getblockhash", [height])
 
